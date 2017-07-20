@@ -197,15 +197,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/07/02/我的博客/">
+                        <a class="link-unstyled" href="/2017/07/20/JavaScript中五中常用的判断字符串中是否包含某字符或方法及比较/">
                             (no title)
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-07-02T02:15:17+08:00">
+    <time itemprop="datePublished" datetime="2017-07-20T22:22:06+08:00">
 	
-		    7月 02, 2017
+		    7月 20, 2017
     	
     </time>
     
@@ -214,52 +214,89 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h1 id="Shell-和-Vi"><a href="#Shell-和-Vi" class="headerlink" title="Shell 和 Vi"></a>Shell 和 Vi</h1><h2 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h2><p>在计算机科学中，Shell俗称壳，用来区别于Kernel（核），是指“提供使用者使用界面”的软件（命令解析器）。它类似于DOS下的command和后来的cmd.exe。它接收用户命令，然后调用相应的应用程序。</p>
-<table>
-<thead>
-<tr>
-<th>Tables</th>
-<th style="text-align:center">Are</th>
-<th style="text-align:center">Cool</th>
-<th style="text-align:right">fasdf</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>col 3 is</td>
-<td style="text-align:center">right-aligned</td>
-<td style="text-align:center">$1600</td>
-<td style="text-align:right">sadfas</td>
-</tr>
-<tr>
-<td>col 2 is</td>
-<td style="text-align:center">centered</td>
-<td style="text-align:center">$12</td>
-<td style="text-align:right">sdfas</td>
-</tr>
-<tr>
-<td>zebra stripes</td>
-<td style="text-align:center">are neat</td>
-<td style="text-align:center">$1</td>
-<td style="text-align:right">asdfa</td>
-</tr>
-</tbody>
-</table>
-<h2 id="shell-的分类"><a href="#shell-的分类" class="headerlink" title="shell 的分类"></a>shell 的分类</h2><ul>
-<li>图形界面shell：通过提供友好的可视化界面，调用相应应用程序，如windows系列操作系统，Linux系统上的图形化应用程序GNOME、KDE等。</li>
-<li>命令行shell：通过键盘输入特定命令的方式，调用相应的应用程序，如windows系统的cmd.exe、Windows PowerShell，Linux系统的Bourne shell ( sh)、Bourne Again shell ( bash)等。</li>
+                    <h2 id="JavaScript中五中常用的判断字符串中是否包含某字符或方法及比较"><a href="#JavaScript中五中常用的判断字符串中是否包含某字符或方法及比较" class="headerlink" title="JavaScript中五中常用的判断字符串中是否包含某字符或方法及比较"></a>JavaScript中五中常用的判断字符串中是否包含某字符或方法及比较</h2><h4 id="7-20-2017-10-41-46-AM"><a href="#7-20-2017-10-41-46-AM" class="headerlink" title="7/20/2017 10:41:46 AM"></a>7/20/2017 10:41:46 AM</h4><hr>
+<h3 id="一、五种判断方法"><a href="#一、五种判断方法" class="headerlink" title="一、五种判断方法"></a>一、五种判断方法</h3><ol>
+<li><p>indexOf方法：</p>
+<p> 代码：</p>
+<pre><code>var str = &apos;abc&apos;;
+if(str.indexOf(&apos;bc&apos;) != -1){}
+</code></pre></li>
+</ol>
+<ol>
+<li><p>search方法：</p>
+<p> 代码：</p>
+<pre><code>var str = &apos;abc&apos;;
+if(str.search(&apos;bc&apos;) != -1){}
+</code></pre></li>
+</ol>
+<ol>
+<li><p>test方法：</p>
+<p> 代码：</p>
+<pre><code>var str = &apos;abc&apos;;
+var reg = new RegExp(&apos;^.*bc.*$&apos;);
+if(reg.test(str){}
+</code></pre></li>
+</ol>
+<ol>
+<li><p>match方法：</p>
+<p> 代码：</p>
+<pre><code>var str = &apos;abc&apos;;
+var reg = new RegExp(&apos;^.*bc.*$&apos;);
+if(str.match(reg)){}
+</code></pre></li>
+<li><p>exec方法：</p>
+<p> 代码：</p>
+<pre><code>var str = &apos;1a1b1c&apos;;
+var reg = new RegExp(&apos;1.&apos;,&apos;g&apos;);
+if(reg.exec(str){}
+</code></pre></li>
+</ol>
+<h3 id="二、五种方法的比较"><a href="#二、五种方法的比较" class="headerlink" title="二、五种方法的比较"></a>二、五种方法的比较</h3><ol>
+<li><p>indexOf与search：</p>
+<ul>
+<li><p>search()方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。indexOf()方法是用来判断一个字符串是否存在于一个更长的字符串中。从长字符串左端到右端来搜索，如果存在该子字符串就放回它所处的位置（即索引值）。如果在被搜索的字符串没有找到要查找的字符串则返回-1。 <strong>注意：</strong> 这里的位置应当填写索引值。所有的字符串索引值是从0开始的，第一个字符的位置就是0，终点位置就是字符串的长度减去1。</p>
+<ul>
+<li><p>indexOf()与search()的区别：</p>
+<ol>
+<li>search()的参数必须是正则表达式，indexOf()的参数是普通字符串。</li>
+<li>indexOf()是比search()更加底层的方法。</li>
+<li>indexOf()系统资源消耗更小，效率更高；如果查找某些特征的字符串，那么则必须使用正则表达式和search()方法。</li>
+</ol>
+</li>
 </ul>
-<h2 id="认识bash这个shell"><a href="#认识bash这个shell" class="headerlink" title="认识bash这个shell"></a>认识bash这个shell</h2><blockquote>
-<p>在window系统下使用bash，需要一个软件，这个软件模拟集成了bash大部分命令。</p>
-</blockquote>
-<p>各个 shell 的功能都差不多， Linux 默认使用 bash ，所以我们主要学习bash的使用。</p>
+<p>2.match、test和exec的比较：</p>
+</li>
+<li><p>创建正则表达式字面量，加上^和$，与不加是有区别的。</p>
+</li>
+<li><p>对于test()方法，存在比正则多的字符的时候，依然返回比较成功true，这与我们仅仅想比较内容合预期的要求是相背离的。</p>
+<p>  <strong>比如：</strong></p>
+<pre><code>var regx = /\d{1,2}\/\d{1,2}\/d{4}/gi;
+regx,test(&apos;08/08/2014 5&apos;); //会返回true,因为字符串中包含符合要求的字符串
+</code></pre></li>
+<li>match也可以获得匹配的内容，而regx。exec(‘08/08/2014 2’)就会返回null，尽管字符串中有符合要求的内容。</li>
+<li>match的调用对象是字符串，exec和test的调用对象是regx。</li>
+<li>如果你仅仅想在字符串中搜索，那么久不需要加开始和结束限定符。</li>
+<li>regx的exec方法会每次返回1个匹配，如果不为空就进行下一次查找，因此可以使用while循环来写。</li>
+<li>match返回一个匹配的数组，test返回字符串中是否包含指定的模式，exec返回字符串中该模式，并将下一次开始查找的位置保存在<em>lastIndex</em>属性中。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>Give them a try:</p>
+<ul>
+<li><strong>Bold</strong> (<code>Ctrl+B</code>) and <em>Italic</em> (<code>Ctrl+I</code>)</li>
+<li>Quotes (<code>Ctrl+Q</code>)</li>
+<li>Code blocks (<code>Ctrl+K</code>)</li>
+<li>Headings 1, 2, 3 (<code>Ctrl+1</code>, <code>Ctrl+2</code>, <code>Ctrl+3</code>)</li>
+<li>Lists (<code>Ctrl+U</code> and <code>Ctrl+Shift+O</code>)</li>
+</ul>
 
                     
                         
                     
                     
                         <p>
-                            <a href="/2017/07/02/我的博客/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2017/07/20/JavaScript中五中常用的判断字符串中是否包含某字符或方法及比较/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
