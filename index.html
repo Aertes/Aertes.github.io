@@ -92,7 +92,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Início</span>
+                    <span class="sidebar-button-desc">Inicio</span>
                 </a>
         </li>
         
@@ -104,7 +104,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                    <span class="sidebar-button-desc">Categorias</span>
+                    <span class="sidebar-button-desc">Categorías</span>
                 </a>
         </li>
         
@@ -116,7 +116,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                    <span class="sidebar-button-desc">Tags</span>
+                    <span class="sidebar-button-desc">Etiquetas</span>
                 </a>
         </li>
         
@@ -128,7 +128,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Arquivo</span>
+                    <span class="sidebar-button-desc">Archivos</span>
                 </a>
         </li>
         
@@ -140,7 +140,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Pesquisar</span>
+                    <span class="sidebar-button-desc">Buscar</span>
                 </a>
         </li>
         
@@ -152,7 +152,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">Sobre</span>
+                    <span class="sidebar-button-desc">Acerca de</span>
                 </a>
         </li>
         
@@ -197,14 +197,14 @@
                 <h1 class="postShorten-title" itemprop="headline">
                     
                         <a class="link-unstyled" href="/2017/07/27/javaScript中的内置对象/">
-                            (sem título)
+                            (sin título)
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
     <time itemprop="datePublished" datetime="2017-07-27T10:28:58+08:00">
 	
-		    27/07/2017
+		    27 7月 2017
     	
     </time>
     
@@ -213,14 +213,43 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h1 id="javaScript中的内置对象"><a href="#javaScript中的内置对象" class="headerlink" title="javaScript中的内置对象"></a>javaScript中的内置对象</h1><h3 id="内置对象的分类："><a href="#内置对象的分类：" class="headerlink" title="内置对象的分类："></a>内置对象的分类：</h3>
+                    <h1 id="javaScript中的内置对象"><a href="#javaScript中的内置对象" class="headerlink" title="javaScript中的内置对象"></a>javaScript中的内置对象</h1><h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><ul>
+<li>javascript已经预先给我们定义好了很多对象，这些对象可以直接去使用，可以帮我们完成一些常用的功能；<h3 id="内置对象的分类："><a href="#内置对象的分类：" class="headerlink" title="内置对象的分类："></a>内置对象的分类：</h3><h2 id="Math-对象："><a href="#Math-对象：" class="headerlink" title="Math 对象："></a>Math 对象：</h2></li>
+<li><p>常用属性：</p>
+<blockquote>
+<p>Math.PI：获取π的值;</p>
+</blockquote>
+</li>
+<li><p>常用方法：</p>
+<blockquote>
+<p>Math.max():获取最大值;<br>  <br><br>Math.min():获取最小值;<br>  <br><br>Math.ceil()：向上取整;<br>  <br><br>Math.floor(): 向下取整;<br>  <br><br>Math.round():四舍五入;<br>  <br><br>Math.random():返回0-1之间的一个随机数，[0,1) 能取到0，取不到1;<br>  <br><br>Math.abs():取绝对值;<br>  <br><br>Math.pow(num,power):求num的power次幂;<br>  <br><br>Math.sqrt(num):对num开平方;</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Date对象："><a href="#Date对象：" class="headerlink" title="Date对象："></a>Date对象：</h2><ul>
+<li><p>创建一个日期对象：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">//使用构造函数创建一个日期对象</span></div><div class="line">   <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">//不传参数表示当前时间</span></div><div class="line"></div><div class="line">   <span class="comment">//构造函数可以接受三种参数：</span></div><div class="line">   <span class="string">"2016-07-25 10:14:09:991"</span>  字符串的日期格式</div><div class="line"><span class="number">2005</span>，<span class="number">9</span>，<span class="number">1</span>日期的每一部分，注意月份是从<span class="number">0</span>开始的</div><div class="line">表示日期的毫秒形式<span class="number">1128096000000</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>日期格式化：</p>
+<ul>
+<li>日期转换成字符串：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> date();</div><div class="line"><span class="built_in">console</span>.log(date.toString());<span class="comment">//直接打印date，默认调用toString方法</span></div><div class="line"><span class="built_in">console</span>.log(date.toLocaleString());</div><div class="line"><span class="built_in">console</span>.log(date.toDateString());</div><div class="line"><span class="built_in">console</span>.log(date.toLocaleDateString());</div><div class="line"><span class="built_in">console</span>.log(date.toTimeString());</div><div class="line"><span class="built_in">console</span>.log(date.toLocaleTimeString());</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>日期转换成毫秒：<pre><code class="js">
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
                     
                         
                     
                     
                         <p>
                             <a href="/2017/07/27/javaScript中的内置对象/#post-footer" class="postShorten-excerpt_link link">
-                                Comentar e compartilhar
+                                Comentar y compartir
                             </a>
                         </p>
                     
@@ -238,14 +267,14 @@
                 <h1 class="postShorten-title" itemprop="headline">
                     
                         <a class="link-unstyled" href="/2017/07/20/JavaScript中五中常用的判断字符串中是否包含某字符或方法及比较/">
-                            (sem título)
+                            (sin título)
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
     <time itemprop="datePublished" datetime="2017-07-20T22:22:06+08:00">
 	
-		    20/07/2017
+		    20 7月 2017
     	
     </time>
     
@@ -337,7 +366,7 @@ regx,test(&apos;08/08/2014 5&apos;); //会返回true,因为字符串中包含符
                     
                         <p>
                             <a href="/2017/07/20/JavaScript中五中常用的判断字符串中是否包含某字符或方法及比较/#post-footer" class="postShorten-excerpt_link link">
-                                Comentar e compartilhar
+                                Comentar y compartir
                             </a>
                         </p>
                     
